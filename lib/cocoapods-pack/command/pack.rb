@@ -153,6 +153,7 @@ module Pod
 
       def install(podfile, platform, podspec)
         UI.puts "\nInstalling #{podspec.name} for #{platform.name}...\n\n".yellow
+        UI.puts "\nInstalling #{podspec.name} for #{platform.name}...\n\n".yellow
         original_config = config.clone
         config.installation_root = Pathname.new(File.join(@project_files_dir, 'sandbox', platform.name.to_s))
 
@@ -161,6 +162,7 @@ module Pod
         installer = Installer.new(sandbox, podfile)
         installer.repo_update = @repo_update
         installer.use_default_plugins = false
+        installer.podfile.installation_options.option('swift_version', '5.4')
         # noinspection RubyResolve
         installer.podfile.installation_options.integrate_targets = false
         # noinspection RubyResolve
