@@ -127,6 +127,7 @@ module Pod
         available_platforms(podspec).each do |platform|
           linkage = @use_static_frameworks ? :static : :dynamic
           podfile = podfile_from_spec(platform, podspec, source_urls, linkage, @is_local)
+          podspec.swift_version = '5.4'
           sandbox = install(podfile, platform, podspec)
           @sandbox_map[platform.name] = sandbox
           xcodebuild_out_dir = File.join(sandbox.root.to_s, 'xcodebuild')
