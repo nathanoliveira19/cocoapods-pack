@@ -17,14 +17,14 @@ Gem::Specification.new do |spec|
   Other attributes such as `resource_bundles` specified in the source podspec will also be packed.
   A binary podspec is also generated that can be published to a CocoaPods specs repo.
   DESC
-  spec.homepage      = 'https://github.com/square/cocoapods-pack'
+  spec.homepage      = 'https://github.com/nathanoliveira19/cocoapods-pack'
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>= 2.5.0'
 
-  spec.add_dependency 'cocoapods', '>= 1.10', '< 2.0'
+  spec.add_dependency 'cocoapods', '~> 1.11.3'
   spec.add_dependency 'rubyzip', '~> 2.0'
 
   spec.add_development_dependency 'activesupport', '~> 5.0'

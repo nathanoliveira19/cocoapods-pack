@@ -162,8 +162,8 @@ module Pod
         installer = Installer.new(sandbox, podfile)
         installer.repo_update = @repo_update
         installer.use_default_plugins = false
-        UI.puts installer.podfile.installation_options.methods.sort
-        #installer.podfile.installation_options.option('swift_version', '5.4', false)
+        #UI.puts installer.podfile.installation_options.methods.sort
+        installer.podfile.installation_options.option('swift_version', '5.4', false)
         # noinspection RubyResolve
         installer.podfile.installation_options.integrate_targets = false
         # noinspection RubyResolve
